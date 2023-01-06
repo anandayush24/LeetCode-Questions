@@ -13,9 +13,7 @@ class Solution{
             if(arr[itr]<=N){
                 mp[arr[itr]]++;
             }
-        }
-        for(int i=0; i<N; i++){
-            arr[i]= 0;
+            arr[itr]= 0;
         }
         for(auto itr: mp){
             arr[itr.first-1]=itr.second; 
