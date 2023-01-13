@@ -14,7 +14,6 @@ public:
     bool isLeaf(TreeNode* root){
         return (root->left==NULL) && (root->right==NULL);
     }
-    int i=0;
     void solution(TreeNode* root, int temp, int &ans){
         temp= (10*temp) + root->val;
         if(isLeaf(root)){
