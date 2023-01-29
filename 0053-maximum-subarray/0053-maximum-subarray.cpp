@@ -1,18 +1,23 @@
 class Solution {
 public:
-    int maxSubArray(vector<int>& nums) {
-        int n= nums.size();
-        int ans=INT_MIN, temp=0;
-        for(int itr=0; itr<n; itr++){
-            temp+= nums[itr];
-            if(temp>ans){
-                ans= temp;
-            }
-            
-            if(temp<0){
-                temp=0;
-            }
+    void solution(vector<int>& nums, int index, int &temp, int &ans){
+        if(index==nums.size()){
+            return;
         }
+        temp+= nums[index];
+        if(temp>ans){
+            ans= temp;
+        }
+        if(temp<0){
+            temp=0;
+        }
+        
+        solution(nums, index+1, temp, ans);
+    }
+    int maxSubArray(vector<int>& nums) {
+        int temp=0, ans= INT_MIN;
+        solution(nums, 0, temp, ans);
+        
         return ans;
     }
 };
