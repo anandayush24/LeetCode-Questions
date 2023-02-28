@@ -36,7 +36,7 @@ public:
         for(int i=0; i<n; i++){
             sum+= arr[i];
         }
-        if(sum%2==1){
+        if(sum&1){
             return 0;
         }
         int target= sum/2;
